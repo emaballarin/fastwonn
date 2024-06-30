@@ -1,0 +1,25 @@
+#
+#  Copyright (c) 2024 Emanuele Ballarin <emanuele@ballarin.cc>
+#  Released under the terms of the MIT License
+#  (see: https://url.ballarin.cc/mitlicense)
+#
+# ------------------------------------------------------------------------------
+# Necessary
+torch>=2
+torchsort>=0.1.9
+
+# KeOps implementation
+keopscore>=2.2.3
+pykeops>=2.2.3
+
+# Faiss implementation (cpu)
+faiss-cpu>=1.8.0
+
+# Faiss implementation (gpu, all CUDAs, older)
+faiss-gpu>=1.7.2
+
+# Faiss implementation (gpu, CUDA 11, newer)
+faiss-gpu-cu11>=1.8.0.2
+
+# Faiss implementation (gpu, CUDA 12, newer)
+faiss-gpu-cu12>=1.8.0.2
