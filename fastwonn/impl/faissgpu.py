@@ -3,25 +3,32 @@
 # ──────────────────────────────────────────────────────────────────────────────
 from typing import List
 
-import pykeops.torch as tkeops
+import faiss
 import torch
 from torch import Tensor
 
 # ──────────────────────────────────────────────────────────────────────────────
 
-__all__: List[str] = ["_cdist_topk_keops"]
+__all__: List[str] = ["_cdist_topk_faissgpu", "test_faiss_gpu"]
 
 # ──────────────────────────────────────────────────────────────────────────────
 
 
-def _cdist_topk_keops(x: Tensor, k: int = 2, x_distances: bool = False) -> Tensor:
+def test_faiss_gpu() -> None:
+    _ = faiss.GpuIndexFlatL2
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+
+
+# noinspection PyArgumentList
+def _cdist_topk_faissgpu(x: Tensor, k: int = 2, x_distances: bool = False) -> Tensor:
     if x_distances:
         raise NotImplementedError(
-            "KeOps implementation does not support distance matrices. Use the 'torch' implementation instead."
+            "FAISS implementation does not support distance matrices. Use the 'torch' implementation instead."
         )
-
-    xts: int = x.shape[1]
-    xi: tkeops.LazyTensor = tkeops.Vi(0, xts)
-    xj: tkeops.LazyTensor = tkeops.Vj(1, xts)
-    dij = ((xi - xj) ** 2).sum(-1)
-    return dij.Kmin(k + 1, dim=1)(x, x)
+    xdev: torch.device = x.device
+    x: Tensor = x.cpu()
+    index = faiss.GpuIndexFlatL2(faiss.StandardGpuResources(), x.shape[1])
+    index.add(x)
+    return torch.from_numpy(index.search(x, k + 1)[0]).to(xdev)

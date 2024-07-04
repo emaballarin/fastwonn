@@ -22,7 +22,7 @@ PACKAGENAME: str = "fastwonn"
 
 setup(
     name=PACKAGENAME,
-    version="0.0.2",
+    version="0.0.3",
     author="Emanuele Ballarin",
     author_email="emanuele@ballarin.cc",
     url="https://github.com/emaballarin/fastwonn",
@@ -34,6 +34,8 @@ setup(
         "Differentiable Programming",
         "Intrinsic Dimension",
         "Machine Learning",
+        "Manifold Learning",
+        "Maximum Likelihood Estimation",
         "PyTorch",
         "TwoNN",
     ],
