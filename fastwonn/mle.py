@@ -66,4 +66,4 @@ def mle_id_avg(
                 / torch.log(torch.div(*torch.unbind(ks[:, 0:2], 1))).sum()
             )
 
-        return torch.tensor(runs).mean()
+        return torch.stack(runs).nanmean()
