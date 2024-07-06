@@ -26,7 +26,7 @@ setup(
     author="Emanuele Ballarin",
     author_email="emanuele@ballarin.cc",
     url="https://github.com/emaballarin/fastwonn",
-    description="Fast, GPU-friendly, differentiable computation of Intrinsic Dimension via the TwoNN algorithm (Facco et al., 2017)",
+    description="Fast, GPU-friendly, differentiable computation of Intrinsic Dimension via Maximum Likelihood (Levina & Bickel, 2004), the TwoNN algorithm (Facco et al., 2017), and everything in between!",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
     keywords=[
