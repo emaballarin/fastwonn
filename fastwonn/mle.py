@@ -47,6 +47,8 @@ def mle_id_avg(
     with ExitStack() as stack:
         stack.enter_context(torch.no_grad()) if not differentiable else None
 
+        twonn_sep: bool = twonn_fix and nneigh_min == 2
+
         ks: Tensor = call_to_impl_cdist_topk[impl](x, nneigh_max, False)[:, 1:]
         runs = [
             (
@@ -56,10 +58,10 @@ def mle_id_avg(
                     ks[:, -1 - i].view(-1, 1) / (ks[:, :-i] if i != 0 else ks)
                 ).sum(1)
             ).mean()
-            for i in range(nneigh_max - nneigh_min + (not twonn_fix))
+            for i in range(nneigh_max - nneigh_min + (not twonn_sep))
         ]
 
-        if twonn_fix and nneigh_min == 2:
+        if twonn_sep:
             runs.append(
                 -2
                 * ks.size(0)

@@ -22,7 +22,7 @@ PACKAGENAME: str = "fastwonn"
 
 setup(
     name=PACKAGENAME,
-    version="0.0.7",
+    version="0.0.8",
     author="Emanuele Ballarin",
     author_email="emanuele@ballarin.cc",
     url="https://github.com/emaballarin/fastwonn",
