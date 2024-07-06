@@ -9,3 +9,4 @@ from .twonn import twonn_id
 del twonn
 del mle
 del impl
+del utils
