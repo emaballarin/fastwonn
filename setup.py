@@ -22,11 +22,11 @@ PACKAGENAME: str = "fastwonn"
 
 setup(
     name=PACKAGENAME,
-    version="0.0.8",
+    version="0.0.9",
     author="Emanuele Ballarin",
     author_email="emanuele@ballarin.cc",
     url="https://github.com/emaballarin/fastwonn",
-    description="Fast, GPU-friendly, differentiable computation of Intrinsic Dimension via Maximum Likelihood (Levina & Bickel, 2004), the TwoNN algorithm (Facco et al., 2017), and everything in between!",
+    description="Fast, GPU-friendly, differentiable computation of Intrinsic Dimension via Maximum Likelihood, the TwoNN algorithm, and everything in between!",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
     keywords=[
@@ -59,6 +59,6 @@ setup(
         "faiss_gpu_newer_cu11": ["faiss-gpu-cu11>=1.8.0.2"],
         "faiss_gpu_newer_cu12": ["faiss-gpu-cu12>=1.8.0.2"],
     },
-    include_package_data=True,
-    zip_safe=False,
+    include_package_data=False,
+    zip_safe=True,
 )
