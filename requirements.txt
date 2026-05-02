@@ -19,7 +19,7 @@ faiss-cpu>=1.8.0
 faiss-gpu>=1.7.2
 
 # Faiss implementation (gpu, CUDA 11, newer)
-faiss-gpu-cu11>=1.8.0.2
+faiss-gpu-cu11>=1.14.1.post1
 
 # Faiss implementation (gpu, CUDA 12, newer)
 faiss-gpu-cu12>=1.8.0.2
