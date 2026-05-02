@@ -6,7 +6,7 @@
 # ------------------------------------------------------------------------------
 # Necessary
 torch>=2
-torchsort>=0.1.9
+torchsort>=0.1.10
 
 # KeOps implementation
 keopscore>=2.3
