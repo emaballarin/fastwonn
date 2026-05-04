@@ -10,7 +10,7 @@ torchsort>=0.1.10
 
 # KeOps implementation
 keopscore>=2.3
-pykeops>=2.2.3
+pykeops>=2.3
 
 # Faiss implementation (cpu)
 faiss-cpu>=1.13.2
