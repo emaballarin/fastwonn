@@ -16,7 +16,7 @@ pykeops>=2.3
 faiss-cpu>=1.14.2
 
 # Faiss implementation (gpu, all CUDAs, older)
-faiss-gpu>=1.7.2
+faiss-gpu>=1.14.3
 
 # Faiss implementation (gpu, CUDA 11, newer)
 faiss-gpu-cu11>=1.14.1.post1
